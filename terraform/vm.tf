@@ -28,6 +28,10 @@ resource "google_compute_instance" "vm_instance" {
     }
   }
 
+  metadata = {
+    ssh-keys = "${local.ssh_user}:${file("~/.ssh/id_ed25519.pub")}"
+  }
+
   labels = {
     environment = "dev"
     managed_by  = "terraform"
