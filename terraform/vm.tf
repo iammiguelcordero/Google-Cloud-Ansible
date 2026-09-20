@@ -12,7 +12,7 @@ resource "google_compute_instance" "vm_instance" {
   machine_type = "n2-standard-2"
   zone         = var.vm_config.zone
 
-  tags = ["datadog", "test", "spsolutions"]
+  tags = ["datadog", "test"]
 
   boot_disk {
     initialize_params {
