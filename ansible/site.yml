@@ -1,0 +1,13 @@
+---
+- name: Configurar Nginx en servidores web
+  hosts: servers-nginx
+  become: true
+
+  roles:
+    - geerlingguy.nginx
+
+- name: Configurar base de datos con MySQL
+  hosts: server-mysql
+  become: true
+  roles:
+    - geerlingguy.mysql

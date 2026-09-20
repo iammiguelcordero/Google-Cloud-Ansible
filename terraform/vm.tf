@@ -6,6 +6,10 @@ locals {
   ]
 }
 
+resource "tls_private_key" "ssh_key" {
+  algorithm = "ED25519"
+}
+
 resource "google_compute_instance" "vm_instance" {
   count        = length(local.vm_names)
   name         = local.vm_names[count.index]
@@ -29,7 +33,7 @@ resource "google_compute_instance" "vm_instance" {
   }
 
   metadata = {
-    ssh-keys = "${local.ssh_user}:${file("~/.ssh/id_ed25519.pub")}"
+    ssh-keys = "${local.ssh_user}:${tls_private_key.ssh_key.public_key_openssh}"
   }
 
   labels = {
