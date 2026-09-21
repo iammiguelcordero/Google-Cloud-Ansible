@@ -2,7 +2,8 @@ locals {
   vm_names = [
     "${var.vm_config.name}ansible-001",
     "${var.vm_config.name}nginx-001",
-    "${var.vm_config.name}mysql-001"
+    "${var.vm_config.name}mysql-001",
+    "${var.vm_config.name}datadog-001"
   ]
 }
 
