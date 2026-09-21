@@ -1,0 +1,20 @@
+---
+- name: Setting Nginx
+  hosts: servers_nginx
+  become: true
+  roles:
+    - geerlingguy.nginx
+
+- name: Setting database MySQL
+  hosts: server_mysql
+  become: true
+  roles:
+    - geerlingguy.mysql
+
+- name: Setting DatadogAgent
+  hosts: server_datadog
+  become: true
+  roles:
+    - datadog.datadog
+  vars:
+    datadog_api_key: "<YOUR_DD_API_KEY>"
