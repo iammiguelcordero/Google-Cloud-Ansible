@@ -1,18 +1,18 @@
 ---
-- name: Configurar Nginx en servidores web
-  hosts: servers-nginx
+- name: Setting Nginx
+  hosts: servers_nginx
   become: true
   roles:
     - geerlingguy.nginx
 
-- name: Configurar base de datos con MySQL
-  hosts: server-mysql
+- name: Setting database MySQL
+  hosts: server_mysql
   become: true
   roles:
     - geerlingguy.mysql
 
-- name: Instalar datadog
-  hosts: servers
+- name: Setting DatadogAgent
+  hosts: server_datadog
   become: true
   roles:
     - datadog.datadog
