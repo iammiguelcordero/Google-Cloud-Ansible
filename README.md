@@ -2,6 +2,6 @@
 
 # Architecture
 
-![Architecture Diagram](docs/images/gcp-miguel-lab.drawio.png)
+![Architecture Diagram](docs/images/Terraform-Ansible.drawio.png)
 
 ---
