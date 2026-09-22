@@ -88,6 +88,7 @@ cd Google-Cloud-Ansible/ansible
 ```
 
 Update Inventory
+
 Update the inventory.ini file with the internal/external IP addresses of your VMs and your Linux user. Once updated, verify connectivity using the ping module:
 
 ```bash
