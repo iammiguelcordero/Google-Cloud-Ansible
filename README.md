@@ -32,7 +32,7 @@ You will need to change the variables `ZONE`, `REGION`, and `PROJECT`.
 
 ## 1. Deploy Infrastructure with Terraform
 
-Clone this repo in your local machine or Google Cloud Shell:
+Clone this repo in your `Google Cloud Shell`:
 
 ```bash
 git clone https://github.com/iammiguelcordero/Google-Cloud-Ansible.git
@@ -52,7 +52,7 @@ Just wait a few minutes, and our infrastructure will be ready.
 
 ## 2. SSH Configuration for Ansible Controller
 
-In vm-ansible-001, generate an SSH key to propagate it to the other VMs:
+In `vm-ansible-001`, generate an SSH key to propagate it to the other VMs:
 
 ```bash
 ssh-keygen -t ed25519 -N ""
@@ -73,14 +73,14 @@ chmod 600 ~/.ssh/authorized_keys
 
 Once your infrastructure is up, you can proceed with configuring the servers.
 
-First, install the necessary dependencies in **vm-ansible-001**:
+First, install the necessary dependencies in `vm-ansible-001`:
 
 ```bash
 sudo apt update
 sudo apt install -y git ansible python3
 ```
 
-Now, clone the repository again directly inside your control node (vm-ansible-001):
+Now, clone the repository again directly inside your control node `(vm-ansible-001)`:
 
 ```bash
 git clone https://github.com/iammiguelcordero/Google-Cloud-Ansible.git
@@ -95,7 +95,7 @@ ansible all -i inventory.ini -m ping
 ```
 
 Install Roles
-If everything is OK, install the required roles from the requirements.yml file using --force:
+If everything is OK, install the required roles from the `requirements.yml` file using --force:
 
 ```bash
 ansible-galaxy role install -r requirements.yml --force
