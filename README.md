@@ -87,7 +87,7 @@ git clone https://github.com/iammiguelcordero/Google-Cloud-Ansible.git
 cd Google-Cloud-Ansible/ansible
 ```
 
-Update Inventory
+### Update Inventory
 
 Update the inventory.ini file with the internal/external IP addresses of your VMs and your Linux user. Once updated, verify connectivity using the ping module:
 
@@ -95,14 +95,15 @@ Update the inventory.ini file with the internal/external IP addresses of your VM
 ansible all -i inventory.ini -m ping
 ```
 
-Install Roles
+### Install Roles
+
 If everything is OK, install the required roles from the `requirements.yml` file using --force:
 
 ```bash
 ansible-galaxy role install -r requirements.yml --force
 ```
 
-Run the Playbook
+### Run the Playbook
 
 ```bash
 ansible-playbook -i inventory.ini site.yml
